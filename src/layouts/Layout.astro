@@ -1,3 +1,10 @@
+---
+import { basics } from "@cv"
+
+interface Props {
+  title: string
+}
+
 const { title } = Astro.props
 
 const { image, summary, url } = basics
@@ -70,7 +77,7 @@ const { image, summary, url } = basics
   h3,
   h4 {
     margin: 0;
-    /* Also changed headers to Roboto Slab to match */
+    /* Changed headings to Roboto Slab */
     font-family: "Roboto Slab", serif;
   }
 
