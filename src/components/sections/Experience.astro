@@ -2,16 +2,17 @@
 import Section from "../Section.astro"
 
 import { work } from "@cv"
+const { color } = Astro.props
 ---
 
-<Section title="Experiencia laboral">
+<Section title="Experience" color={color}>
   <ul>
     {
       work.map(
         ({ name, startDate, endDate, position, summary, highlights, url }) => {
           const startYear = new Date(startDate).getFullYear()
           const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
+            endDate != null ? new Date(endDate).getFullYear() : "Present"
 
           return (
             <li>
@@ -57,7 +58,7 @@ import { work } from "@cv"
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
   }
 
   article h3 {
@@ -90,6 +91,7 @@ import { work } from "@cv"
     font-size: 0.85rem;
     min-width: 102px;
     cursor: default;
+    text-align: right;
   }
 
   [data-title]:hover:after {

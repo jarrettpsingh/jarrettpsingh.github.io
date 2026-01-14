@@ -24,7 +24,7 @@ const linkedUrl = linkedInfo?.url
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 ---
 
-<Section>
+<Section showStripe={false}>
   <div class="container">
     <div class="info">
       <h1>{name}</h1>
@@ -41,7 +41,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+              title={`Send an email to ${name} at ${email}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -53,7 +53,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              title={`Call ${name} at ${phone}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -68,7 +68,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
+                title={`See ${name}'s profile on ${network}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -99,24 +99,29 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     flex-direction: column;
     gap: 0.5rem;
     padding-right: 32px;
+    margin-top: -10px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: 500;
+    display: inline-block; /* Ensures the line only goes as far as the text */
+    border-bottom: 5px solid #9dc492; /* Use your Teal color from the palette */
   }
 
   h2 {
-    color: #444;
-    font-weight: 500;
+    color: #666;
     font-size: 1.1rem;
     text-wrap: balance;
   }
 
   img {
+    
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 128px;
-    border-radius: 16px;
+    width: 170px; /* or your preferred size */
+    border-radius: 20px;
+    
   }
 
   span {
@@ -125,15 +130,13 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     align-items: center;
     gap: 0.25rem;
     font-size: 0.85rem;
-    letter-spacing: -0.05rem;
   }
 
   footer {
-    color: #555;
+    color: #666;
     font-size: 0.65rem;
     display: flex;
-    gap: 4px;
-    margin-top: 8px;
+    gap: 10px;
   }
 
   footer a {
@@ -141,7 +144,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eee;
+    border: 1px solid #CCC;
     padding: 4px;
     height: 32px;
     width: 32px;
@@ -164,6 +167,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
       align-items: center;
       padding-right: 0;
       text-align: center;
+      
     }
 
     figure {

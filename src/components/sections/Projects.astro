@@ -3,9 +3,10 @@ import GitHub from "@/icons/GitHub.astro"
 import Section from "../Section.astro"
 
 import { projects } from "@cv"
+const { color } = Astro.props
 ---
 
-<Section title="Proyectos">
+<Section title="Projects" color={color}>
   <ul>
     {
       projects.map(
@@ -24,7 +25,7 @@ import { projects } from "@cv"
                         class="github-code-link"
                         href={github}
                         target="_blank"
-                        title={`Ver código fuente del proyecto ${name}`}
+                        title={`View the project's code. ${name}`}
                       >
                         <GitHub />
                       </a>
@@ -56,12 +57,13 @@ import { projects } from "@cv"
 
   article {
     border-radius: 8px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid #CCC;
     gap: 16px;
     display: flex;
     flex-direction: column;
     padding: 16px;
     height: 100%;
+    margin-left: 14px;
   }
 
   article header {

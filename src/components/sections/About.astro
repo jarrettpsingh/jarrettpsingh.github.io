@@ -3,9 +3,10 @@ import Section from "../Section.astro"
 
 import { basics } from "@cv"
 const { summary } = basics
+const { color } = Astro.props
 ---
 
-<Section title="Sobre mí">
+<Section title="About Me" color={color}>
   <p>
     {summary}
   </p>

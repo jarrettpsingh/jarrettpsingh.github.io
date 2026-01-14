@@ -1,13 +1,13 @@
 ---
 import Section from "../Section.astro"
-
 import { education } from "@cv"
+const { color } = Astro.props
 ---
 
-<Section title="Educación">
+<Section title="Education" color={color}>
   <ul>
     {
-      education.map(({ institution, startDate, endDate, area }) => {
+      education.map(({ institution, startDate, endDate, area, courses }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear =
           endDate != null ? new Date(endDate).getFullYear() : "Actual"
@@ -20,12 +20,22 @@ import { education } from "@cv"
                 <div>
                   <h3>{institution}</h3>
                 </div>
-
                 <time>{years}</time>
               </header>
 
               <footer>
                 <p>{area}</p>
+                {courses && (
+                  <ul class="courses-list">
+                    {courses.map((course) => (
+                      <li>
+                        <a href={course.url} target="_blank" rel="noopener noreferrer">
+                          {course.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </footer>
             </article>
           </li>
@@ -39,7 +49,7 @@ import { education } from "@cv"
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 32px; /* Preserved exact spacing */
   }
 
   article h3 {
@@ -58,6 +68,51 @@ import { education } from "@cv"
     color: #555;
     font-size: 0.85rem;
     min-width: 102px;
+    text-align: right;
+  }
+
+  p {
+    color: #666;
+    font-size: 0.9rem; /* Preserved exact size */
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Course List Styles */
+  .courses-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .courses-list li {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.8rem;
+  }
+
+  /* Dot Separator Logic */
+  .courses-list li:not(:last-child)::after {
+    content: "•";
+    margin: 0 8px;
+    color: #ccc;
+    font-size: 0.7rem;
+  }
+
+  .courses-list a {
+    color: #666;
+    text-decoration: none; /* Matches your experience file logic */
+  }
+
+  /* IMPLEMENTED UNDERLINE CODE FROM EXPERIENCE FILE */
+  .courses-list a:hover {
+    text-decoration: underline;
+    color: #111;
   }
 
   @media (width <= 700px) {

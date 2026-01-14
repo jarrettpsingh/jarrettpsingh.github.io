@@ -11,16 +11,24 @@ import KeyboardManager from "@/components/KeyboardManager.astro"
 
 import { basics } from "@cv"
 const { name, label } = basics
+
+/* Your Color Palette Hex Codes */
+const colors = {
+  orange: "#eec698", 
+  blue: "#b4d9ee",
+  lilac: "#b7beec"
+}
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
   <main>
     <Hero />
-    <About />
-    <Experience />
-    <Education />
-    <Projects />
-    <Skills />
+    
+    <About color={colors.orange} />
+    <Projects color={colors.blue} />
+    <Experience color={colors.lilac} />
+    <Education color={colors.orange} />
+    <Skills color={colors.blue} />
   </main>
 
   <KeyboardManager />

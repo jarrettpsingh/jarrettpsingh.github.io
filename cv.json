@@ -3,9 +3,9 @@
     "name": "Jarrett Singh",
     "label": "EECS Student @ UC Berkeley",
     "image": "/me.webp",
-    "email": "miduga@gmail.com",
+    "email": "jarrettpsingh@gmail.com",
     "phone": "4084259231",
-    "url": "https://midu.dev",
+    "url": "https://www.instagram.com/formulaelectricberkeley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     "summary": "Sophomore passionate about electrical engineering",
     "location": {
       "address": "",
@@ -17,50 +17,41 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "midudev",
-        "url": "https://linkedin.com/in/midudev"
-      },
-      {
-        "network": "X",
-        "username": "midudev",
-        "url": "https://x.com/midudev"
-      },
-      {
-        "network": "GitHub",
-        "username": "midudev",
-        "url": "https://github.com/midudev"
+        "username": "Jarrett Singh",
+        "url": "https://www.linkedin.com/in/jarrett-singh-a52019211"
       }
     ]
   },
   "work": [
     {
-      "name": "midudev",
-      "position": "Divulgador sobre Programación Web",
-      "url": "https://twitch.tv/midudev",
-      "startDate": "2021-01-01",
+      "name": "Formula Electric @ Berkeley",
+      "position": "Accumulator Electrical Engineer",
+      "url": "https://www.instagram.com/formulaelectricberkeley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      "startDate": "2024-08-01",
       "endDate": null,
-      "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
+      "summary": "Designing schematics, creating layouts, and testing high voltage boards that interface with a 588V battery. See BMS Daughterboard and BBB above!",
       "highlights": [
         "Started the company"
       ]
     },
     {
-      "name": "Adevinta",
-      "position": "Lead Frontend Architect",
-      "url": "https://twitch.tv/midudev",
-      "startDate": "2016-06-01",
-      "endDate": "2022-09-01",
-      "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
+      "name": "EECS 16A Course Staff",
+      "position": "Tutor",
+      "url": "https://eecs16a.org/",
+      "startDate": "2024-08-01",
+      "endDate": null,
+      "summary": "Leading office hours sessions to support 200+ students’ comprehension in signals and data processing. Strengthening pedagogical skills by giving clear explanations and hints to a diversity of learning styles.",
       "highlights": [
         "Started the company"
       ]
     },
     {
-      "name": "Hubii",
-      "position": "Senior FrontEnd Developer",
-      "startDate": "2011-03-01",
-      "endDate": "2016-05-01",
-      "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefónica para desarrollar la primera app para televisores con FirefoxOS.",
+      "name": "FIRST Tech Challenge",
+      "position": "CenterStage President",
+      "url": "https://www.instagram.com/mset6165/", 
+      "startDate": "2020-08-01",
+      "endDate": "2024-05-01",
+      "summary": "Facilitated growth in professionalism, technical skills, and outreach amongst 3 teams and 45 members. See Pumpkin Smasher and Active Intakes above!",
       "highlights": [
         "Started the company"
       ]
@@ -78,15 +69,16 @@
     ]
   }],
   "education": [{
-    "institution": "Universitat Oberta de Catalunya",
-    "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
+    "institution": "University of California, Berkeley",
+    "url": "https://eecs.berkeley.edu/",
+    "area": "Electrical Engineering and Computer Sciences. GPA: 3.93",
     "studyType": "Bachelor",
-    "startDate": "2003-01-01",
-    "endDate": "2009-01-01",
-    "score": "4.0",
+    "startDate": "2024-01-01",
+    "endDate": "2028-01-01",
     "courses": [
-      "DB1101 - Basic SQL"
+      { "name": "EE105 - Microelectronic Devices and Circuits", "url": "https://people.eecs.berkeley.edu/~pister/105fa25/" },
+      { "name": "EE120 - Signals and Systems", "url": "https://ee120-course-staff.github.io/" },
+      { "name": "CS61C - Computer Architecture", "url": "https://cs61c.org/fa25/" }
     ]
   }],
   "awards": [{
@@ -110,81 +102,31 @@
   }],
   "skills": [
     {
-      "name": "HTML",
-      "level": "Master",
+      "name": "Altium",
       "keywords": [
-        "Desarrollo Web", "Frontend"
+        "Electrical Engineering", "PCB"
+      ]
+    }, 
+    {
+      "name": "KiCAD",
+      "keywords": [
+        "Electrical Engineering", "PCB"
       ]
     },
     {
-      "name": "CSS",
-      "level": "Master",
+      "name": "SolidWorks",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Diseño Responsive"
+        "CAD"
       ]
     },
     {
-      "name": "JavaScript",
-      "level": "Master",
+      "name": "3D Printing",
       "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+        "3D Printing", "Rapid Prototyping", "FDM"
       ]
     },
     {
-      "name": "Tailwind",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
-      ]
-    },
-    {
-      "name": "TypeScript",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
-      ]
-    },
-    {
-      "name": "Node",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Backend", "JavaScript", "Servidor"
-      ]
-    },
-    {
-      "name": "MySQL",
-      "level": "Avanzado",
-      "keywords": [
-        "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
-      ]
-    },
-    {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente"
-      ]
-    },
-    {
-      "name": "GitHub",
-      "level": "Avanzado",
-      "keywords": [
-        "Control de Versiones", "Colaboración", "Código Fuente", "Git"
-      ]
-    },
-    {
-      "name": "Next.js",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
-      ]
-    },
-    {
-      "name": "React",
-      "level": "Avanzado",
-      "keywords": [
-        "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
-      ]
+      "name": "System Integration"
     }
   ],
   "languages": [

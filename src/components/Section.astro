@@ -1,25 +1,33 @@
 ---
-// se ejecuta en el servidor o en build time <----
-const { title } = Astro.props
+// 1. Added showStripe to the props, defaulting to true
+const { title, color = "#d1d5db", showStripe = true } = Astro.props
 ---
 
-<section>
+<section 
+  style={`--section-color: ${color}`} 
+  class={showStripe ? "" : "no-stripe"}
+>
   {title && <h2>{title}</h2>}
   <slot />
 </section>
 
-<script>
-  // se ejecuta en el cliente <----
-</script>
-
 <style>
   section {
     max-width: 700px;
-    margin: 0 auto 48px;
+    margin: 0 auto 25px;
+    border-left: 4px solid var(--section-color);
+    padding-left: 14px;
+    transition: border-color 0.3s ease;
+  }
+
+  /* 3. This specific rule removes the stripe and padding when the class is present */
+  section.no-stripe {
+    border-left: none;
+    padding-left: 0;
   }
 
   h2 {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     font-weight: 700;
     line-height: 1.5;
     font-size: 1.5rem;
@@ -28,6 +36,10 @@ const { title } = Astro.props
   @media (width <= 700px) {
     section {
       margin-bottom: 38px;
+      padding-left: 16px;
+    }
+    section.no-stripe {
+      padding-left: 0;
     }
   }
 </style>
