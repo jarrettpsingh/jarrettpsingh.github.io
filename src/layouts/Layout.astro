@@ -43,6 +43,26 @@ const { image, summary, url } = basics
 </html>
 
 <style is:global>
+  /* Fix for mobile clipping and alignment */
+  body {
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling/clipping */
+  }
+
+  main, section {
+    max-width: 100%;
+    padding-inline: 0px; /* Provides consistent, balanced side spacing */
+    margin: 0 auto;       /* Centers the container */
+  }
+
+  /* Ensures grid/flex project boxes wrap instead of pushing out */
+  ul, grid, .projects-container { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
   html {
     /* Changed to Roboto Slab */
     font-family: "Roboto Slab", serif;
