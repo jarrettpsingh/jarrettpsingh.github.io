@@ -154,6 +154,7 @@
     {
       "name": "mars.codes",
       "isActive": true,
+      "github": "",
       "isInternal": true,
       "description": "Historia interactiva con retos de programación para viajar a Marte",
       "highlights": [
