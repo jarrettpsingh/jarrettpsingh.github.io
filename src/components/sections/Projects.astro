@@ -10,13 +10,22 @@ const { color } = Astro.props
   <ul>
     {
       projects.map(
-        ({ url, description, highlights, name, isActive, github }) => {
+        ({ description, highlights, name, isActive, github, url, isInternal }) => {
+          // Logic to choose between the internal page or external URL
+          const projectLink = isInternal 
+            ? `/projects/${name.toLowerCase().replace(/\s+/g, '-')}` 
+            : url
+
           return (
             <li>
               <article>
                 <header>
                   <h3>
-                    <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>
+                    <a 
+                      href={projectLink} 
+                      target={isInternal ? "_self" : "_blank"} 
+                      title={`View ${name}`}
+                    >
                       {name}
                     </a>
                     {isActive && <span>•</span>}
@@ -25,7 +34,7 @@ const { color } = Astro.props
                         class="github-code-link"
                         href={github}
                         target="_blank"
-                        title={`View the project's code. ${name}`}
+                        title={`View code: ${name}`}
                       >
                         <GitHub />
                       </a>
@@ -34,9 +43,9 @@ const { color } = Astro.props
                   <p>{description}</p>
                 </header>
                 <footer>
-                  {highlights.map((highlight) => {
-                    return <span>{highlight}</span>
-                  })}
+                  {highlights.map((highlight) => (
+                    <span>{highlight}</span>
+                  ))}
                 </footer>
               </article>
             </li>
@@ -48,43 +57,35 @@ const { color } = Astro.props
 </Section>
 
 <style>
+  /* All your existing styles (Grid, Article, Stretched Link, etc.) stay the same */
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-inline: -16px;
+    margin-top: 3px; 
   }
 
   article {
+    position: relative; 
     border-radius: 8px;
     border: 1px solid #CCC;
-    gap: 16px;
+    gap: 2px;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 24px; 
     height: 100%;
-    margin-left: 14px;
+    margin-left: 16px; 
   }
 
-  article header {
-    flex: 1;
+  article h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 
   article h3 {
-    margin-bottom: 4px;
-  }
-
-  article a {
-    color: #111;
-  }
-
-  article a:hover {
-    text-decoration: underline;
-  }
-
-  article p {
-    font-size: 0.75rem;
-    line-height: 1.2rem;
     margin-bottom: 4px;
   }
 
@@ -94,55 +95,57 @@ const { color } = Astro.props
     animation-duration: 3s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
+    margin-left: 4px;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.25; }
+    100% { opacity: 1; }
+  }
+
+  article a {
+    color: #111;
+  }
+
+  .github-code-link {
+    position: relative;
+    z-index: 2;
+    margin-left: 5px;
+  }
+
+  article p {
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    margin-bottom: 4px;
   }
 
   footer {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     gap: 4px;
     font-size: 0.6rem;
+    margin-top: auto; 
+    padding-top: 8px;
   }
 
   footer span {
     border-radius: 6px;
     background: #eee;
     color: #444;
-    font-size: 0.6rem;
-    font-weight: 500;
     padding: 0.2rem 0.6rem;
-  }
-
-  .github-code-link {
-    margin-left: 5px;
-  }
-
-  @keyframes flicker {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.25;
-    }
-    100% {
-      opacity: 1;
-    }
+    white-space: nowrap; 
   }
 
   @media (width <= 700px) {
     ul {
       margin-inline: 0px;
+      grid-template-columns: 1fr 1fr; 
+      gap: 0.75rem;
     }
-
     article {
-      border: none;
-      box-shadow: 0 1px 1px #f2f2f2;
-      padding: 0 0 16px 0;
-    }
-  }
-
-  @media print {
-    article h3 span {
-      animation-name: none;
+      margin-left: 0;
+      padding: 8px 16px 16px 16px;
     }
   }
 </style>

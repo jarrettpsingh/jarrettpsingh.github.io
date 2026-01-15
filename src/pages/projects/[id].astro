@@ -1,0 +1,110 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import Section from "../../components/Section.astro"
+import KeyboardManager from "../../components/KeyboardManager.astro"
+import { projects } from "@cv"
+
+export function getStaticPaths() {
+  return projects
+    .filter(project => project.isInternal)
+    .map((project) => ({
+      params: { id: project.name.toLowerCase().replace(/\s+/g, '-') },
+      props: { project },
+    }))
+}
+
+const { project } = Astro.props
+const { details } = project
+const STRIPE_COLORS = ["#3b82f6", "#ef4444", "#10b981", "#f59e0b", "#8b5cf6"]
+---
+
+<Layout title={`${project.name} | Jarrett Singh`}>
+  <main>
+    <Section title={project.name} showStripe={false}>
+      <p class="meta">
+        <strong>{details?.organization}</strong> • {details?.dateCreated}
+      </p>
+    </Section>
+
+    <Section title="Overview" color={STRIPE_COLORS[0]}>
+      <p>{details?.summary || project.description}</p>
+    </Section>
+
+    {details?.productImages && (
+      <Section title="Final Product" color={STRIPE_COLORS[1]}>
+        <div class="image-grid">
+          {details.productImages.map((img) => (
+            <div class="image-item">
+              <img src={img.url} alt={img.caption} class="project-img" />
+              <p class="caption">{img.caption}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+    )}
+
+    {details?.iterations?.map((step, index) => {
+      const sectionColor = STRIPE_COLORS[(index + 2) % STRIPE_COLORS.length]
+      return (
+        <Section title={step.title || `Iteration ${index + 1}`} color={sectionColor}>
+          {step.date && <p class="iteration-date">{step.date}</p>}
+          
+          <div class="image-grid">
+            {step.images?.map((img) => (
+              <div class="image-item">
+                <img src={img.url} alt={img.caption} class="project-img" />
+                <p class="caption">{img.caption}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* New technical description section */}
+          {step.description && <p class="step-description">{step.description}</p>}
+        </Section>
+      )
+    })}
+    
+    <footer class="back-link no-print">
+      <a href="/">← Back to Home</a>
+    </footer>
+  </main>
+  <KeyboardManager />
+</Layout>
+
+<style>
+  main { max-width: 700px; margin: 0 auto; padding: 20px 0; }
+  .meta { font-size: 1.1rem; color: #444; margin-bottom: -10px; }
+  .iteration-date { font-size: 0.85rem; color: #888; margin-bottom: 12px; font-weight: 500; }
+
+  /* Grid layout: 2 columns for large screens, 1 column for mobile */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Ensures single photos take up the full width if they are alone */
+  .image-grid:has(> :only-child) {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img { width: 100%; border-radius: 8px; border: 1px solid #CCC; display: block; }
+  .caption { margin-top: 8px; font-style: italic; color: #666; font-size: 0.85rem; text-align: center; }
+
+  /* Styled for the non-italicized technical explanation */
+  .step-description {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .back-link { margin: 40px 0; padding-top: 20px; border-top: 1px solid #eee; }
+  .back-link a { color: #444; font-weight: 700; font-size: 0.9rem; }
+
+  @media (max-width: 600px) {
+    .image-grid { grid-template-columns: 1fr; }
+    main { padding: 20px 16px; }
+  }
+</style>
