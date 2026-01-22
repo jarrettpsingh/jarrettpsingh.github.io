@@ -15,14 +15,14 @@ export function getStaticPaths() {
 
 const { project } = Astro.props
 const { details } = project
-const STRIPE_COLORS = ["#3b82f6", "#ef4444", "#10b981", "#f59e0b", "#8b5cf6"]
+const STRIPE_COLORS = ["#b4d9ee", "#e0a5a5", "#a8df92", "#eec698", "#b7beec"]
 ---
 
 <Layout title={`${project.name} | Jarrett Singh`}>
   <main>
     <Section title={project.name} showStripe={false}>
       <p class="meta">
-        <strong>{details?.organization}</strong> • {details?.dateCreated}
+        <strong>{details?.organization}</strong>  —  {details?.dateCreated}
       </p>
     </Section>
 

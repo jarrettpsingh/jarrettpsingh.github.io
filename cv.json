@@ -152,19 +152,20 @@
   }],
   "projects": [
     {
-      "name": "mars.codes",
+      "name": "Big Battery Board",
       "isActive": true,
       "github": "",
       "isInternal": true,
-      "description": "Historia interactiva con retos de programación para viajar a Marte",
+      "description": "Combining precharge, shutdown, BMS, and indicator driver circuitry onto one board. Interfaces directly with a full 588V accumulator.",
       "highlights": [
-        "Elige tu propia aventura",
-        "En desarrollo"
+        "Altium",
+        "PCB Schematic and Layout", 
+        "High Voltage"
       ],
       "url": "https://mars.codes",
       "details": {
-        "organization": "Personal Project",
-        "dateCreated": "2025",
+        "organization": "Formula Electric @ Berkeley",
+        "dateCreated": "August 2025",
         "summary": "This is a detailed summary of the project goals...",
         "productImages": [
           {
@@ -206,56 +207,62 @@
         ]
       }
     },
+
     {
-      "name": "AdventJS",
+      "name": "BMS Daughterboard",
       "isActive": true,
-      "isInternal": true, 
-      "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
+      "github": "",
+      "isInternal": true,
+      "description": "Historia interactiva con retos de programación para viajar a Marte",
       "highlights": [
-        "+1 millón de visitas",
-        "Multidioma",
-        "JavaScript & TypeScript"
+        "Elige tu propia aventura",
+        "En desarrollo"
       ],
-      "url": "https://adventjs.dev"
-    },
-    {
-      "name": "Codember",
-      "isActive": true,
-      "description": "Juego interactivo de programación con retos y secretos",
-      "highlights": [
-        "+2000 usuarios activos",
-        "Retos para cualquier lenguaje"
-      ],
-      "url": "https://codember.dev"
-    },
-    {
-      "name": "codi.link",
-      "isActive": true,
-      "description": "Playground de código HTML, CSS y JavaScript para compartir",
-      "highlights": [
-        "100k visitas al mes",
-        "Desarrollado por la comunidad"
-      ],
-      "url": "https://codi.link"
-    },
-    {
-      "name": "Pruebas Técnicas",
-      "isActive": true,
-      "description": "Lista de pruebas técnicas de empresas para practicar programación",
-      "highlights": [
-        "100% gratuito",
-        "+500 soluciones de la comunidad"
-      ],
-      "url": "https://pruebastecnicas.com"
-    },
-    {
-      "name": "miduConf",
-      "description": "eaming para la comunidad hispanohablante con charlas top",
-      "highlights": [
-        "+15k tickets repartidos",
-        "+50k espectadores en directo"
-      ],
-      "url": "https://miduconf.com"
+      "url": "https://mars.codes",
+      "details": {
+        "organization": "Formula Electric @ Berkeley",
+        "dateCreated": "2025",
+        "summary": "This is a detailed summary of the project goals...",
+        "productImages": [
+          {
+            "url": "/images/bbb_front_pcb.webp",
+            "caption": "The completed interactive UI for the Mars mission."
+          }, 
+          {
+            "url": "/images/bbb_front_3d.webp",
+            "caption": "The completed interactive UI for the Mars mission."
+          },
+          {
+            "url": "/images/bbb_front_pcb.webp",
+            "caption": "The completed interactive UI for the Mars mission."
+          }
+
+        ],
+        "iterations": [
+          {
+            "title": "UI Conceptualization",
+            "date": "August 2025",
+            "images": [
+              {
+                "url": "/images/mars-v1.webp",
+                "caption": "Initial sketch of the UI layout and user flow."
+              }
+            ], 
+            "description": "In this stage, I focused on the responsive grid layout and ensured the terminal emulator component could handle real-time input."
+          },
+          {
+            "title": "Frontend Prototyping",
+            "date": "September 2025",
+            "images": [
+              {
+                "url": "/images/mars-v2.webp",
+                "caption": "First prototype built using Astro and CSS."
+              }
+            ]
+          }
+        ]
+      }
     }
+    
   ]
 }
