@@ -156,7 +156,7 @@
       "isActive": true,
       "github": "",
       "isInternal": true,
-      "description": "Combining precharge, shutdown, BMS, and indicator driver circuitry onto one board. Interfaces directly with a full 588V accumulator.",
+      "description": "Combining precharge, shutdown, BMS, and indicator driver circuitry for an electric racecar onto one board. Interfaces directly with a full 588V accumulator.",
       "highlights": [
         "Altium",
         "PCB Schematic and Layout", 
@@ -166,25 +166,21 @@
       "details": {
         "organization": "Formula Electric @ Berkeley",
         "dateCreated": "August 2025",
-        "summary": "This is a detailed summary of the project goals...",
+        "summary": "The Big Battery Board (BBB) is a board that combines many crucial safety circuits for an electric racecar. This board handles much of the shutdown logic within the high voltage realm, which will disconnect the isolation relays and shut off all power in a dangerous event. In this case, that includes making sure that there is sufficient isolation between the tractive system and GLV ground (IMD), there is no overtemperature or over/under voltage event within the accumulator (BMS), or if the master switch is turned off (TSMS). In addition, this board prevents massive inrush current destroying the inverter using a precharge resistor. This baord also includes drivers for lights indicating that there is voltage in the tractive system (TSSI) and that the car is ready to move (RTML).",
         "productImages": [
           {
             "url": "/images/bbb_front_pcb.webp",
-            "caption": "The completed interactive UI for the Mars mission."
+            "caption": "Completed PCB, with purposeful blocks and routing."
           }, 
           {
             "url": "/images/bbb_front_3d.webp",
-            "caption": "The completed interactive UI for the Mars mission."
-          },
-          {
-            "url": "/images/bbb_front_pcb.webp",
-            "caption": "The completed interactive UI for the Mars mission."
+            "caption": "3D Rendering of completed PCB."
           }
 
         ],
         "iterations": [
           {
-            "title": "UI Conceptualization",
+            "title": "Defining Project Goals",
             "date": "August 2025",
             "images": [
               {
@@ -192,10 +188,10 @@
                 "caption": "Initial sketch of the UI layout and user flow."
               }
             ], 
-            "description": "In this stage, I focused on the responsive grid layout and ensured the terminal emulator component could handle real-time input."
+            "description": "Changes to the accessibility rules of the E-Meter allowed us to consolidate two of our high voltage boxes into one (attic and hv box -> attic), and thus the BBB needed to absorb the functionality of the boards within the HV Box; this mainly were the indicator light drivers circuits. Other important considerations at this stage were that we wanted our system to be more robust than last year. Due to the daisy-chained nature of our module wires, it was easy for some data to be lost due to a wire being unplugged, wasting about an hour each time. To avoid this, I decided to implement a looped communication design such that any one break of wire within the data can be accounted for. "
           },
           {
-            "title": "Frontend Prototyping",
+            "title": "Schematic",
             "date": "September 2025",
             "images": [
               {
